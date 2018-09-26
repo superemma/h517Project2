@@ -230,21 +230,6 @@ d3.select("#show-voronoi")
 // dot attributes
 var dotsAttr = {cx: function(d){return d[0]},
                 cy:function(d){return d[1]},
-                r: 5,
+                r: 3,
                 fill: "blue"}
 
-// set up drag for circles
-var drag = d3.behavior.drag()
-    .on("drag", dragmove);
-
-function dragmove(d) {
-    d3.select(this)
-      .attr("cx", d3.event.x)
-      .attr("cy", d3.event.y);
-
-    this.__data__ = [d3.event.x, d3.event.y]
-
-    updateDots();
-
-    endOfLastDrag = Date.now();
-}
