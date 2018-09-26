@@ -37,3 +37,27 @@
     }
 </style>
 </head>
+
+<body>
+<div class="container-fluid">
+    <div class="row" align="center">
+        <h1>Visualization of London's 1854 Cholera Epidemic</h1>
+    </div> 
+    <a href="documentation.html">Documentation</a>
+<div class="row">
+<div class="col-sm-6" id="leftpanel">
+    <svg id="timechart"></svg>
+</div>
+<div class="col-sm-6" id="rightpanel">
+    <label id="form" for="show-voronoi">
+  			<input type="checkbox" id="show-voronoi" checked>
+  			Show Voronoi Polygons
+	</label>
+	<button class="button" id="zoom_in">+</button>
+	<button class="button" id="zoom_out">-</button>
+    <svg id="main" width="550" height="550" style="border: 0.5px solid rgb(192, 192, 192); touch-action: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);" ></svg>
+</div>
+</div>
+</div> 
+</body>
+</html>
