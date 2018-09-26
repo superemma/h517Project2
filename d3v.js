@@ -4,7 +4,7 @@ var margin = {top: 20, right: 20, bottom: 30, left: 40};
 var div = d3.select("body").append("div") 
     .attr("class", "tooltip")       
     .style("opacity", 0);
-    
+     
 var zoom = d3.behavior.zoom().scaleExtent([1, 10]).on("zoom", zoomed);
 
 var svgContainer = d3.select("#main")
