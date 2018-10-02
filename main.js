@@ -10,6 +10,11 @@ var scaleY = d3.scale.linear().domain([0, 20]).range([height, 0]);
 var LscaleX = d3.scale.linear().domain([0, 40]).range([0, 400]);
 var LscaleY = d3.scale.linear().domain([0, 5]).range([70, 0]);
 var formatDate = d3.time.format("%b-%d");
+//#8e0152 #c51b7d #de77ae #f1b6da #fde0ef #f7f7f7 #e6f5d0 #b8e186 #7fbc41 #4d9221 #276419
+$('#pump1').click(function() {
+    d3.selectAll('path[Pump = "P1"]').style("fill", "red");
+});
+
 
 var colourScale = d3.scale.ordinal().domain(["0", "1", "2", "3", "4", "5"]).range(['#ffffcc', '#c7e9b4', '#7fcdbb', '#41b6c4', '#2c7fb8', '#253494']);
 
@@ -49,7 +54,8 @@ d3.csv("pumps.csv", function(error, data) {
     });
 
     // Add pumps
-    svgContainer.selectAll(".point").data(data).enter().append("path").attr("class", "point").attr("d", d3.svg.symbol().type("cross")).attr("transform", function(d) {
+    svgContainer.selectAll(".point").data(data).enter().append("path").attr("class", "point").attr("d", d3.svg.symbol().type("cross")).
+    attr("Pump", function(d) { return d.id}).attr("transform", function(d) {
         return "translate(" + scaleX(d.x) + "," + scaleY(d.y) + ")";
     }).on("click", toggleColor);
     svgContainer.selectAll("text.pump").data(data).enter().append("text").text(function(d) {
@@ -74,10 +80,10 @@ d3.select("#legends").append("text").text("Deaths\u00A0 \u00A0Shape:Gender").att
 d3.select("#legends").append("text").text("Color:Age Group").attr("transform", function(d) {return "translate(" + LscaleX(22) + "," + LscaleY(4.4) + ")";}).attr("fill", "black").attr("font-size", "12px");
 
 d3.select("#legends").append("path").attr("class", "dot").attr("transform", function(d) {return "translate(" + LscaleX(13) + "," + LscaleY(0.7) + ")";}).style("stroke-width", 0.5).style("stroke", "black").attr("d", symbolTypes.circle()).style("fill","white");
-d3.select("#legends").append("text").text("1 : Female").attr("transform", function(d) {return "translate(" + LscaleX(14) + "," + LscaleY(0.5) + ")";}).attr("fill", "black").attr("font-size", "12px");
+d3.select("#legends").append("text").text("Female").attr("transform", function(d) {return "translate(" + LscaleX(14) + "," + LscaleY(0.5) + ")";}).attr("fill", "black").attr("font-size", "12px");
 d3.select("#legends").append("path").attr("class", "dot").attr("transform", function(d) {return "translate(" + LscaleX(13) + "," + LscaleY(2.5) + ")";}).style("stroke-width", 0.5).style("stroke", "black").attr("d", symbolTypes.diamond()).style("fill","white");
 
-d3.select("#legends").append("text").text("0 : Male").attr("transform", function(d) {return "translate(" + LscaleX(14) + "," + LscaleY(2.2) + ")";}).attr("fill", "black").attr("font-size", "12px");
+d3.select("#legends").append("text").text("Male").attr("transform", function(d) {return "translate(" + LscaleX(14) + "," + LscaleY(2.2) + ")";}).attr("fill", "black").attr("font-size", "12px");
 
 //'#ffffcc', '#c7e9b4', '#7fcdbb', '#41b6c4', '#2c7fb8', '#253494'
 d3.select("#legends").append("path").attr("class", "dot").attr("transform", function(d) {return "translate(" + LscaleX(24) + "," + LscaleY(3.4) + ")";}).attr("d", d3.svg.symbol().type("square").size(80)).style("fill","#ffffcc");
@@ -88,13 +94,14 @@ d3.select("#legends").append("path").attr("class", "dot").attr("transform", func
 d3.select("#legends").append("path").attr("class", "dot").attr("transform", function(d) {return "translate(" + LscaleX(24) + "," + LscaleY(0.3) + ")";}).attr("d", d3.svg.symbol().type("square").size(80)).style("fill","#253494");
 
 
-d3.select("#legends").append("text").text("0 : 0 -10").attr("transform", function(d) {return "translate(" + LscaleX(25) + "," + LscaleY(3.3) + ")";}).attr("fill", "black").attr("font-size", "11px");
-d3.select("#legends").append("text").text("1 : 11-20").attr("transform", function(d) {return "translate(" + LscaleX(25) + "," + LscaleY(2.7) + ")";}).attr("fill", "black").attr("font-size", "11px");
-d3.select("#legends").append("text").text("2 : 21-40").attr("transform", function(d) {return "translate(" + LscaleX(25) + "," + LscaleY(2.05) + ")";}).attr("fill", "black").attr("font-size", "11px");
-d3.select("#legends").append("text").text("3 : 41-60").attr("transform", function(d) {return "translate(" + LscaleX(25) + "," + LscaleY(1.45) + ")";}).attr("fill", "black").attr("font-size", "11px");
-d3.select("#legends").append("text").text("4 : 61-80").attr("transform", function(d) {return "translate(" + LscaleX(25) + "," + LscaleY(0.75) + ")";}).attr("fill", "black").attr("font-size", "11px");
-d3.select("#legends").append("text").text("5 :   >80").attr("transform", function(d) {return "translate(" + LscaleX(25) + "," + LscaleY(0.15) + ")";}).attr("fill", "black").attr("font-size", "11px");
+d3.select("#legends").append("text").text("0 : 0 -10 yrs").attr("transform", function(d) {return "translate(" + LscaleX(25) + "," + LscaleY(3.3) + ")";}).attr("fill", "black").attr("font-size", "11px");
+d3.select("#legends").append("text").text("1 : 11-20 yrs").attr("transform", function(d) {return "translate(" + LscaleX(25) + "," + LscaleY(2.7) + ")";}).attr("fill", "black").attr("font-size", "11px");
+d3.select("#legends").append("text").text("2 : 21-40 yrs").attr("transform", function(d) {return "translate(" + LscaleX(25) + "," + LscaleY(2.05) + ")";}).attr("fill", "black").attr("font-size", "11px");
+d3.select("#legends").append("text").text("3 : 41-60 yrs").attr("transform", function(d) {return "translate(" + LscaleX(25) + "," + LscaleY(1.45) + ")";}).attr("fill", "black").attr("font-size", "11px");
+d3.select("#legends").append("text").text("4 : 61-80 yrs").attr("transform", function(d) {return "translate(" + LscaleX(25) + "," + LscaleY(0.75) + ")";}).attr("fill", "black").attr("font-size", "11px");
+d3.select("#legends").append("text").text("5 :   >80 yrs").attr("transform", function(d) {return "translate(" + LscaleX(25) + "," + LscaleY(0.15) + ")";}).attr("fill", "black").attr("font-size", "11px");
 //draw death
+var deathspump=[]
 d3.csv("deaths_age_sex.csv", function(error, death) {
     if (error) throw error;
     death.forEach(function(d) {
@@ -122,6 +129,12 @@ d3.csv("deaths_age_sex.csv", function(error, death) {
     });
     var ageGroups = ageGroup.group();
 
+        // Group by Pump
+    var PumpGroup = deathcrossfilter.dimension(function(d) {
+        return d.ClosestPump;
+    });
+    var PumpGroups = PumpGroup.group();
+    
     // Group by gender
     var gender = deathcrossfilter.dimension(function(d) {
         return d.gender;
@@ -131,7 +144,7 @@ d3.csv("deaths_age_sex.csv", function(error, death) {
       .data([DeathList]);
     // Chart elements
     var charts = [
-              barChart()
+         barChart()
         .dimension(date)
         .group(dates)
         .round(d3.time.day.round)
@@ -152,8 +165,14 @@ d3.csv("deaths_age_sex.csv", function(error, death) {
         .group(genders)
         .x(d3.scale.ordinal()
            .domain(["male", "female"])
-           .rangeRoundBands([0, 10 * 5], 0.5))     
+           .rangeRoundBands([0, 80], 0.5)),   
         
+        barChart()
+        .dimension(PumpGroup)
+        .group(PumpGroups)
+        .x(d3.scale.ordinal()
+           .domain(["P1", "P2", "P3", "P4", "P5", "P6", "P7", "P8", "P9", "P10", "P11", "P12", "P13"])
+           .rangeRoundBands([0, 300], 0.5)),
 
     ];
     
@@ -190,7 +209,7 @@ d3.csv("deaths_age_sex.csv", function(error, death) {
 // update death
 
 function updatedeath(){  
-    const deathsByDate = nestByDate.entries(date.top(600));
+    const deathsByDate = nestByDate.entries(date.top(1000));
     var deathd = [];
     
     deathsByDate.forEach(function(d,i) {
@@ -199,12 +218,14 @@ function updatedeath(){
         deathd.push(v);
       });
     });
-    console.log(deathd)
     d3.selectAll('path[isDeath = true]').remove()
-    svgContainer.selectAll("path").data(deathd).enter().append("path").attr("class", "dot").attr("deathdate", "dot").attr("transform", function(d) {
+    svgContainer.selectAll("path").data(deathd).enter().append("path").attr("class", "dot").attr("transform", function(d) {
         return "translate(" + scaleX(d.x) + "," + scaleY(d.y) + ")";
     })
     .attr("isDeath", true)
+    .attr("Pump", function(d) {
+        return d.ClosestPump;
+    })
     .style("stroke-width", 0.5)
     .style("stroke", "black")
     .attr("d", function(d, i) {
@@ -220,7 +241,7 @@ function updatedeath(){
                          
   //update list  
  function DeathList(div) {
-    var deathsByDate = nestByDate.entries(date.top(40));
+    var deathsByDate = nestByDate.entries(date.top(50));
 
     div.each(function() {
       var date = d3.select(this).selectAll(".date")
@@ -248,11 +269,12 @@ function updatedeath(){
     });
   }  
  function barChart() {
+
     if (!barChart.id) barChart.id = 0;
 
     var margin = {top: 10, right: 10, bottom: 20, left: 10},
         x,
-        y = d3.scale.linear().range([150, 0]),
+        y = d3.scale.linear().range([120, 0]),
         id = barChart.id++,
         axis = d3.svg.axis().orient("bottom"),
         brush = d3.svg.brush(),
@@ -262,7 +284,7 @@ function updatedeath(){
         round;
     
     function chart(div) {
-      var cwidth = x.range()[1]+200,
+      var cwidth = x.range()[1]*12,
           cheight = y.range()[0];
 
       y.domain([0, group.top(1)[0].value]);
@@ -280,9 +302,10 @@ function updatedeath(){
               .style("display", "none");
 
           g = div.append("svg")
+            .attr("id", function(d){return "cid"+id})
               .attr("width", cwidth + margin.left + margin.right)
               .attr("height", cheight + margin.top + margin.bottom)
-            .append("g")
+              .append("g")
               .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
           g.append("clipPath")
@@ -308,15 +331,19 @@ function updatedeath(){
          
 
           // Initialize the brush component with pretty resize handles.
+          
           var gBrush = g.append("g").attr("class", "brush").call(brush);
+          
           gBrush.selectAll("rect").attr("height", cheight);
-          gBrush.selectAll(".resize").append("path").attr("d", resizePath);
-        }
+          gBrush.selectAll(".resize").append("path").attr("d", resizePath);}
+        
+         
 
         // Only redraw the brush if set externally.
         if (brushDirty) {
           brushDirty = false;
-          g.selectAll(".brush").call(brush);
+          
+          g.selectAll('.brush').call(brush);
           div.select(".title a").style("display", brush.empty() ? "none" : null);
           if (brush.empty()) {
             g.selectAll("#clip-" + id + " rect")
@@ -327,7 +354,7 @@ function updatedeath(){
             g.selectAll("#clip-" + id + " rect")
                 .attr("x", x(extent[0]))
                 .attr("width", x(extent[1]) - x(extent[0]));
-          }
+          }     
         }
 
         g.selectAll(".bar").attr("d", barPath);
@@ -369,6 +396,7 @@ function updatedeath(){
     brush.on("brush.chart", function() {
       var g = d3.select(this.parentNode),
           extent = brush.extent();
+
       if (round) g.select(".brush")
           .call(brush.extent(extent = extent.map(round)))
         .selectAll(".resize")
@@ -442,7 +470,6 @@ function updatedeath(){
   }
 });
 
-/////////////////////////////
 
 
 
