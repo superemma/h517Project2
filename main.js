@@ -10,10 +10,21 @@ var scaleY = d3.scale.linear().domain([0, 20]).range([height, 0]);
 var LscaleX = d3.scale.linear().domain([0, 40]).range([0, 400]);
 var LscaleY = d3.scale.linear().domain([0, 5]).range([70, 0]);
 var formatDate = d3.time.format("%b-%d");
-//#8e0152 #c51b7d #de77ae #f1b6da #fde0ef #f7f7f7 #e6f5d0 #b8e186 #7fbc41 #4d9221 #276419
-$('#pump1').click(function() {
-    d3.selectAll('path[Pump = "P1"]').style("fill", "red");
-});
+//pump button #8e0152 #c51b7d #de77ae #f1b6da #fde0ef #f7f7f7 #e6f5d0 #b8e186 #7fbc41 #4d9221 #276419
+
+$('#pump1').click(function() { d3.selectAll('path[Pump = "P1"]').style("fill", "grey");});
+$('#pump2').click(function() {d3.selectAll('path[Pump = "P2"]').style("fill", "red");});
+$('#pump3').click(function() {d3.selectAll('path[Pump = "P3"]').style("fill", "#8e0152");});
+$('#pump4').click(function() {d3.selectAll('path[Pump = "P4"]').style("fill", "#c51b7d");});
+$('#pump5').click(function() {d3.selectAll('path[Pump = "P5"]').style("fill", "#de77ae");});
+$('#pump6').click(function() {d3.selectAll('path[Pump = "P6"]').style("fill", "#f1b6da");});
+$('#pump7').click(function() {d3.selectAll('path[Pump = "P7"]').style("fill", "#fde0ef");});
+$('#pump8').click(function() {d3.selectAll('path[Pump = "P8"]').style("fill", "#fee090");});
+$('#pump9').click(function() {d3.selectAll('path[Pump = "P9"]').style("fill", "#e6f5d0");});
+$('#pump10').click(function() {d3.selectAll('path[Pump = "P10"]').style("fill", "#b8e186");});
+$('#pump11').click(function() {d3.selectAll('path[Pump = "P11"]').style("fill", "#7fbc41");});
+$('#pump12').click(function() {d3.selectAll('path[Pump = "P12"]').style("fill", "#4d9221");});
+$('#pump13').click(function() {d3.selectAll('path[Pump = "P13"]').style("fill", "#276419");});
 
 
 var colourScale = d3.scale.ordinal().domain(["0", "1", "2", "3", "4", "5"]).range(['#ffffcc', '#c7e9b4', '#7fcdbb', '#41b6c4', '#2c7fb8', '#253494']);
@@ -63,9 +74,34 @@ d3.csv("pumps.csv", function(error, data) {
     }).attr("transform", function(d) {
         return "translate(" + scaleX(d.x + 0.2) + "," + scaleY(d.y - 0.15) + ")";
     }).attr("font-size", "11px")
+    
 });
 //label main roads
-var roadname = [{name: 'O X F O R D \u00A0 \u00A0 S T .', x: 5,y: 15.6,rotate: -10.5}, {name: 'O X F O R D \u00A0 \u00A0 S T .', x: 13.5,    y: 16.8,    rotate: -10.5}, {name: 'R E G E N T \u00A0 \u00A0 S T.', x: 5.8, y: 15.4,  rotate: 75}, {name: 'K I N G \'S \u00A0 \u00A0 S T R E E T',    x: 7.2,    y: 12.2,    rotate: 52}, {    name: 'R E G E N T \u00A0 \u00A0 S T R E E T',x: 8,y: 9.5,rotate: 60}, {name: 'B r o a d \u00A0 \u00A0 S t r e et', x: 11.2,y: 11.2,rotate: -27}, {name: 'B r e w e r S t r e e t',x: 12,y: 5.8, rotate: -42}, {name: 'D E A N \u00A0 \u00A0 S T R E T T',    x: 16.3,    y: 16,    rotate: 66}, {    name: 'PICCADILLY',    x: 14.3,    y: 3.5,    rotate: -24}, {    name: 'Little Windmill',    x: 12.9,    y: 10.6,    rotate: 55}]
+var roadname = [{name: 'O X F O R D \u00A0 \u00A0 S T .', x: 5,y: 15.6,rotate: -10.5}, {name: 'O X F O R D \u00A0 \u00A0 S T .', x: 13.5,    y: 16.8,    rotate: -10.5}, {name: 'R E G E N T \u00A0 \u00A0 S T.', x: 5.8, y: 15.4,  rotate: 75}, {name: 'K I N G \'S \u00A0 \u00A0 S T R E E T',    x: 7.2,    y: 12.2,    rotate: 52}, {    name: 'R E G E N T \u00A0 \u00A0 S T R E E T',x: 8,y: 9.5,rotate: 60}, {name: 'B r o a d \u00A0 \u00A0 S t r e et', x: 11.2,y: 11.2,rotate: -27}, {name: 'B r e w e r S t r e e t',x: 12,y: 5.8, rotate: -42}, {name: 'D E A N \u00A0 \u00A0 S T R E T T',    x: 16.3,    y: 16,    rotate: 66}, {    name: 'PICCADILLY',    x: 14.3,    y: 3.5,    rotate: -24}, {    name: 'Little Windmill',    x: 12.9,    y: 10.6,    rotate: 55},{name:'Work',x:10.5,y:13,rotate:-23},
+              {name:'House',x:11,y:12.5,rotate:-23},{name:'Brewery',x:13.6,y:12.3,rotate:65}]
+var workHouse = [{x:10.1,y:13.5,w:45,h:37,rotate:-25}]
+var brewery = [{x:13.9,y:12.5,w:27,h:15,rotate:62.5}]
+var work = svgContainer.append("rect")
+          .data(workHouse)
+          .attr("transform", function(d) {
+    return "translate(" + scaleX(d.x) + "," + scaleY(d.y) + ") rotate(" + d.rotate + ")";
+})
+          .attr("width", function(d) { return d.w; })
+          .attr("height", function(d) { return d.h; })
+          .attr("stroke", 'grey')
+          .attr("fill-opacity",0.2)
+          .style("fill", "grey"); 
+
+var bre = svgContainer.append("rect")
+          .data(brewery)
+          .attr("transform", function(d) {
+    return "translate(" + scaleX(d.x) + "," + scaleY(d.y) + ") rotate(" + d.rotate + ")";
+})
+          .attr("width", function(d) { return d.w; })
+          .attr("height", function(d) { return d.h; })
+            .attr("fill-opacity",0.2)
+          .style("fill", "grey"); 
+
 svgContainer.selectAll("text.road").data(roadname).enter().append("text").text(function(d) {
     return d.name;
 }).attr("transform", function(d) {
@@ -274,7 +310,7 @@ function updatedeath(){
 
     var margin = {top: 10, right: 10, bottom: 20, left: 10},
         x,
-        y = d3.scale.linear().range([120, 0]),
+        y = d3.scale.linear().range([100, 0]),
         id = barChart.id++,
         axis = d3.svg.axis().orient("bottom"),
         brush = d3.svg.brush(),

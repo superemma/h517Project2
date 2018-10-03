@@ -22,18 +22,27 @@ h1 {
     margin-bottom:.6em;
   }
 .button {
-    background-color: #e7e7e7; color: black;
     border: none;
-    padding: 6px 8px;
+    padding: 4px 6px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
+    font-size: 13px;
    }
-.voronoi {
-	stroke: red;
-	fill: none;
-    }
+.button1 {background-color: grey;}
+.button2 {background-color: red;}
+.button3 {background-color: #8e0152;}
+.button4 {background-color: #c51b7d;}
+.button5 {background-color: #de77ae;}
+.button6 {background-color: #f1b6da;}
+.button7 {background-color: #fde0ef;}
+.button8 {background-color: #fee090;}
+.button9 {background-color: #e6f5d0;}
+.button10 {background-color: #b8e186;}
+.button11 {background-color: #7fbc41;}
+.button12 {background-color: #4d9221;}
+.button13 {background-color: #276419;}
+
 .hidden {
 	display: none;
 }
@@ -86,12 +95,10 @@ h1 {
 }
 #gender-chart {
   width: 120px;
-    height: 250px;
 }
 
 #age-chart {
   width: 200px;
-    height: 250px;
 }
 #legend {
   width: 100px;
