@@ -33,8 +33,9 @@ body{
     <span STYLE="color: green; font-size: 30pt" >Documentation of 1854 London's Cholera Outbreak Visualization</span>
     <p></p>
     <a href="https://superemma.github.io/517" target="_blank" >Link to visualization </a>
+    <p>Designer: Enming Zhang</p>
 <h1>Introduction:</h1>
-<p>This visualization is inspired by Dr. John Snow's contributuin in London's cholera epidemic in 1854. Dr. John Snow is regarded as one of the founding fathers of modern epidemiology. During August 19 to Septempber 29,1854,  hundreds of people dead due to cholera. By creating the famous John Snow's Map, he found that cholera was spread through contaminated water, which contradicted the prevailing theory that diseasses were spread by "miasma" in the air.</p>
+<p>This visualization is inspired by Dr. John Snow's contribution in London's cholera epidemic in 1854. Dr. John Snow is regarded as one of the founding fathers of modern epidemiology. During August 19 to Septempber 29,1854,  hundreds of people dead due to cholera. By creating the famous John Snow's Map, he found that cholera was spread through contaminated water, which contradicted the prevailing theory that diseasses were spread by "miasma" in the air.</p>
 
 <p>In this simplified map of London in 1854, each line represent a street, the main streets are labeled, the Water pumps are marked. Each dot represent a death, the shape and color correspond to different gender and age group. </p>
 
@@ -44,24 +45,28 @@ body{
 <p>1. Colorblind friendly</p>
 <p>2. Stability of graph</p>
 <p>3. Map show main streets names, work house and brewery. Deaths are marked by gender and age.</p>
-<p>4: Map wil interact with timeline on right to represent the death during the time selected.</p>
-<p>5. Map can show the death clustered by closest water pump.</p>
-<p>6. include charts by date, gender and age.</p>
+<p>4: Map will interact with timeline to represent the death during the time selected.</p>
+<p>5. Map can show the deaths clustered by its closest water pump.</p>
+<p>6. There should be charts showing the deaths distributed by date, gender and age.</p>
 <h1>Design Process:</h1>
-<p>First I draw the map with street json file. I tried both svg polygon and polyline, polyline is correct while polygon will draw extra streets compared with the Snow's map</p>
-<p>After I draw the map, I marked the pump, I choose black cross to mark each pump and also labeled them with ID P1 to P13.</p>
-<p>Then it come to the hard part, choose the appropriate schema to mark each death, but I want the symbol clearly show the gender and age group of each death. In the end, I used different shape and color to represent different gender and age group</p>   
-<p>To be able to interact with the death, I did some research and find "Crossfilter" Javascripty library and did some modification to work with the death data</p>    
-<p>As the deaths are likely to related with water pumps, I want to cluster the death by its distance to pumps. So I calculated the distance between each death and 13 pumps, then I labeled the death with its closest water pump. I added button for each water pump that will cluster the death on click</p>    
+<p>First I started by drawing the map with street json file. I tried both svg polygon and polyline, polyline is correct while polygon will draw extra streets compared with Snow's map.</p>
+<p>After I drawed the map, I marked the pump. I chose black cross to represent water pumps and also labeled them with IDs from P1 to P13.</p>
+<p>Then it come to the hard part, choosing the appropriate schema to mark each death. Since I want the symbol to show the gender and age group of each death clearly. In the end, I used different shape and color to correspond to different gender and age group. I used colorbrewer to choose the colors that are colorblind safe. </p>   
+<p>To be able to interact with the death, I did some research and find "Crossfilter" Javascripty library and did some modification to work with the data in this case.</p>    
+<p>Finally, on how to cluster the deaths: As the deaths are likely to related with water pumps, I want to cluster the death by its distance to pumps. So I calculated the distances between death and all 13 pumps, then I labeled the death with its closest water pump. I added button for each water pump that will cluster the death by changing the color of the deaths on click.</p>    
     
 <h1>Findings:</h1>
-    <p>The findings are : deaths are evenly distributed by gender, but there are more deaths in kids (0-10 yrs) and seniors(>80 yrs)</p>
+    <p>After playing with this visualization, I found: </p>
+    <p>Deaths are evenly distributed by gender, but there are more deaths in kids (0-10 yrs) and seniors (>80 yrs).</p>
     <p>More deaths are closest to water Pump 7 on Broad streets through all time, it is likely that this pump is contaminated.</p>
 <h1>Demonstration Video:</h1>
                 <div align="center">
-                    <iframe width="800" height="450" src="https://www.youtube.com/" frameborder="0" allowfullscreen></iframe>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/7OBzE48ZtZ8?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                 </div>
 <h1>Reference:</h1>
-<p>Crossfilter:http://square.github.io/crossfilter/    </p>   
+<p>Crossfilter:http://square.github.io/crossfilter/    </p> 
+<p>colorBrewer:http://colorbrewer2.org/#type=sequential&scheme=YlOrBr&n=6</p>
+<h1>Data Source:</h1>
+<p>https://superemma.github.io/517/deaths_age_sex.csv</p>
             </body>
         </html>
