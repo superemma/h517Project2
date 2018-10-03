@@ -51,9 +51,9 @@ body{
 <h1>Design Process:</h1>
 <p>First I started by drawing the map with street json file. I tried both svg polygon and polyline, polyline is correct while polygon will draw extra streets compared with Snow's map.</p>
 <p>After I drawed the map, I marked the pump. I chose black cross to represent water pumps and also labeled them with IDs from P1 to P13.</p>
-<p>Then it come to the hard part, choosing the appropriate schema to mark each death. Since I want the symbol to show the gender and age group of each death clearly. In the end, I used different shape and color to correspond to different gender and age group. I used colorbrewer to choose the colors that are colorblind safe. </p>   
-<p>To be able to interact with the death, I did some research and find "Crossfilter" Javascripty library and did some modification to work with the data in this case.</p>    
-<p>Finally, on how to cluster the deaths: As the deaths are likely to related with water pumps, I want to cluster the death by its distance to pumps. So I calculated the distances between death and all 13 pumps, then I labeled the death with its closest water pump. I added button for each water pump that will cluster the death by changing the color of the deaths on click.</p>    
+<p>Then it come to the hard part, choosing the appropriate schema to mark each death,as I want the symbol to show the gender and age group of each death clearly. In the end, I used different shape and color to correspond to different gender and age group. I used colorbrewer to choose the colors that are colorblind safe. </p>   
+<p>To be able to interact with the death, I did some research and find "Crossfilter" Javascript library and did some modification to work with the data in this case. I added a function that will update the map when you interact with the time chart</p>    
+<p>Finally, on how to cluster the deaths: As the deaths are likely to related with water pumps, I want to cluster the death by its distance to pumps. So I calculated the distances between death and all 13 pumps externally, then I labeled each death with its closest water pump. I added button for each water pump that will cluster the death by changing the color of the deaths dots on click.</p>    
     
 <h1>Findings:</h1>
     <p>After playing with this visualization, I found: </p>
