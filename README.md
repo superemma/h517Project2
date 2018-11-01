@@ -1,3 +1,3 @@
 # 517
-This is created for project on visulization of 1854 London's cholera outbreak.
-https://superemma.github.io/517/
+This is created for visulization project for obesity clinical trial
+https://superemma.github.io/h517Project2/
