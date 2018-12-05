@@ -1,7 +1,6 @@
 			//Width and height of map
 			var width = 960;
 			var height = 500;
-
 			// D3 Projection
 			var projection = d3.geo.albersUsa()
 							   .translate([width/2, height/2]) // translate to center of screen
@@ -179,7 +178,7 @@
 							    .attr("text-anchor","middle")
 							    .attr("fill","white")
 							    .attr('font-size','6pt');
-					d3.csv("data/us_state_capitals.csv", function(data) {
+					d3.csv("data/us-state-capitals.csv", function(data) {
 						svg.selectAll("circle")
 								.data(data)
 								.enter()
@@ -197,8 +196,6 @@
 								.style("fill", "steelblue")	
 								.style("opacity", 0.5)	
 
-							// Modification of custom tooltip code provided by Malcolm Maclean, "D3 Tips and Tricks" 
-							// http://www.d3noob.org/2013/01/adding-tooltips-to-d3js-graph.html
 								.on("mouseover", function(d) {
 									//console.log(d);      
 							    	div.transition()        
@@ -241,20 +238,92 @@
 					      	  .attr("dy", ".35em")
 					      	  .text(function(d) { return d; 	
 					      	  });
-
 				})
 			});
+var margin = {
+    top: 5,
+    right: 15,
+    bottom: 5,
+    left: 120
+};
+var width2 = 500 - margin.left - margin.right
+  , height2 = 400 - margin.top - margin.bottom;
 
+var svgintervention = d3.select("#intervention").append("svg").attr("width", width2+ margin.left + margin.right).attr("height", height2 + margin.top + margin.bottom).append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+d3.csv("trialsbyIntervention2003-2017.csv", function(data) {
+    var x = d3.scale.linear().range([0, width2])            
+        .domain([0, d3.max(data, function (d) {
+                return +d.r_2017;
+            })]);
+    var y = d3.scale.ordinal().rangeRoundBands([
+        350, 0], 0.1).domain(data.map(function(d) {
+        return d.Intervention;
+    }));
+    //make y axis to show bar names
+    var yAxis = d3.svg.axis().scale(y).tickSize(0).orient("left");
+    var gy = svgintervention.append("g").attr("class", "y axis").call(yAxis)
+    var bars = svgintervention.selectAll(".bar").data(data).enter().append("g").style("fill", "#5f89ad")
+    //append rects
+    bars.append("rect").attr("class", "bar").attr("y", function(d) {
+        return y(d.Intervention);
+    }).attr("height", y.rangeBand()-10).attr("x", 0).attr("width", function(d) {
+        return x(d.r_2017);
+    });
+    //add a value label to the right of each bar
+    bars.append("text").attr("class", "label")//y position of the label is halfway down the bar
+    .attr("y", function(d) {
+        return y(d.Intervention) + y.rangeBand() / 2 -4;
+    })//x position is 3 pixels to the right of the bar
+    .attr("x", function(d) {
+        return x(d.r_2017) + 1;
+    }).text(function(d) {
+        return d.r_2017;
+    });
+});
+
+var svgphase = d3.select("#phase").append("svg").attr("width", width2+ margin.left + margin.right).attr("height", height2 + margin.top + margin.bottom).append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+d3.csv("trialsbyPhase2003-2017.csv", function(data) {
+    var x = d3.scale.linear().range([0, width2])            
+        .domain([0, d3.max(data, function (d) {
+                return +d.r_2017;
+            })]);
+    var y = d3.scale.ordinal().rangeRoundBands([
+        350, 0], 0.1).domain(data.map(function(d) {
+        return d.phase ;
+    }));
+    //make y axis to show bar names
+    var yAxis = d3.svg.axis().scale(y).tickSize(0).orient("left");
+    var gy = svgphase.append("g").attr("class", "y axis").call(yAxis)
+    var bars = svgphase.selectAll(".bar").data(data).enter().append("g").style("fill", "#5f89ad")
+    //append rects
+    bars.append("rect").attr("class", "bar").attr("y", function(d) {
+        return y(d.phase);
+    }).attr("height", y.rangeBand()-10).attr("x", 0).attr("width", function(d) {
+        return x(d.r_2017);
+    });
+    //add a value label to the right of each bar
+    bars.append("text").attr("class", "label")//y position of the label is halfway down the bar
+    .attr("y", function(d) {
+        return y(d.phase) + y.rangeBand() / 2 -4;
+    })//x position is 3 pixels to the right of the bar
+    .attr("x", function(d) {
+        return x(d.r_2017) + 1;
+    }).text(function(d) {
+        return d.r_2017;
+    });
+});
 			function mouseout(d,i){
 				d3.select(this).attr({
 					r:5
 				});
-
 			}
 			function mouseover(d,i){
 				//console.log(d);
 				//console.log(i);
 				var index=i;
+                var year_sig = year_arr[index];
 				d3.select(this).attr({
 					fill:"orange",
 					r:5*2
@@ -262,7 +331,7 @@
 				d3.csv("data/obrbs.csv",function(data){
 					color.domain([1,2,3,4,5]);
 					var ratelabel=[];
-					var year_sig = year_arr[index];
+					
 					//console.log(year_sig);
 					for(var i = 0; i < data.length; i++){
 						if(data[i][year_sig]<0.2&&data[i][year_sig]>=0.15)
@@ -333,7 +402,8 @@
 							    .attr("text-anchor","middle")
 							    .attr("fill","white")
 							    .attr('font-size','6pt');
-							d3.csv("data/us_state_capitals.csv", function(data) {
+                        
+							d3.csv("data/us-state-capitals.csv", function(data) {
 								svg.selectAll("circle")
 									.data(data)
 									.enter()
@@ -351,8 +421,6 @@
 									.style("fill", "steelblue")	
 									.style("opacity", 0.60)	
 
-								// Modification of custom tooltip code provided by Malcolm Maclean, "D3 Tips and Tricks" 
-								// http://www.d3noob.org/2013/01/adding-tooltips-to-d3js-graph.html
 									.on("mouseover", function(d) {      
 								    	div.transition()        
 								      	   .duration(200)      
@@ -373,72 +441,397 @@
 					});
 
 				});
-			}
-	 
-			// // Map the cities I have lived in!
-			// d3.csv("data/us_state_capitals.csv", function(data) {
+               
+    d3.csv("trialsbyIntervention2003-2017.csv", function(data) {
+    svgintervention.selectAll(".bar").remove();
+    svgintervention.selectAll("text").remove(); 
+    var x = d3.scale.linear().range([0, width2])            
+        .domain([0, d3.max(data, function (d) {
+                return +d[year_sig];
+            })]);
+    var y = d3.scale.ordinal().rangeRoundBands([
+        350, 0], 0.1).domain(data.map(function(d) {
+        return d.Intervention;
+    }));
+    //make y axis to show bar names
+    var yAxis = d3.svg.axis().scale(y).tickSize(0).orient("left");
+    var gy = svgintervention.append("g").attr("class", "y axis").call(yAxis)
 
-			// 	svg.selectAll("circle")
-			// 		.data(data)
-			// 		.enter()
-			// 		.append("circle")
-			// 		.attr("cx", function(d) {
-			// 			console.log(projection([d.lon, d.lat]));
-			// 			return projection([d.lon, d.lat])[0];
-			// 		})
-			// 		.attr("cy", function(d) {
-			// 			return projection([d.lon, d.lat])[1];
-			// 		})
-			// 		.attr("r", function(d) {
-			// 			return Math.sqrt(d.default) * 4;
-			// 		})
-			// 		.style("fill", "rgb(217,91,67)")	
-			// 		.style("opacity", 0.85)	
+    var bars = svgintervention.selectAll(".bar").data(data).enter().append("g").style("fill", "#5f89ad")
+    //append rects
+    bars.append("rect").attr("class", "bar").attr("y", function(d) {
+        return y(d.Intervention);
+    }).attr("height", y.rangeBand()-10).attr("x", 0).attr("width", function(d) {
+        return x(d[year_sig]);
+    });
+    //add a value label to the right of each bar
+    bars.append("text").attr("class", "label").attr("id", "yvalue")//y position of the label is halfway down the bar
+    .attr("y", function(d) {
+        return y(d.Intervention) + y.rangeBand() / 2 -4;
+    })//x position is 3 pixels to the right of the bar
+    .attr("x", function(d) {
+        return x(d[year_sig]) + 1;
+    }).text(function(d) {
+        return d[year_sig];
+    });
+});
+d3.csv("trialsbyPhase2003-2017.csv", function(data) {
+    svgphase.selectAll(".bar").remove();
+    svgphase.selectAll("text").remove(); 
+    var x = d3.scale.linear().range([0, width2])            
+        .domain([0, d3.max(data, function (d) {
+                return +d[year_sig];
+            })]);
+    var y = d3.scale.ordinal().rangeRoundBands([
+        350, 0], 0.1).domain(data.map(function(d) {
+        return d.phase ;
+    }));
+    //make y axis to show bar names
+    var yAxis = d3.svg.axis().scale(y).tickSize(0).orient("left");
+    var gy = svgphase.append("g").attr("class", "y axis").call(yAxis)
+    var bars = svgphase.selectAll(".bar").data(data).enter().append("g").style("fill", "#5f89ad")
+    //append rects
+    bars.append("rect").attr("class", "bar").attr("y", function(d) {
+        return y(d.phase);
+    }).attr("height", y.rangeBand()-10).attr("x", 0).attr("width", function(d) {
+        return x(d[year_sig]);
+    });
+    //add a value label to the right of each bar
+    bars.append("text").attr("class", "label")//y position of the label is halfway down the bar
+    .attr("y", function(d) {
+        return y(d.phase) + y.rangeBand() / 2 -4;
+    })//x position is 3 pixels to the right of the bar
+    .attr("x", function(d) {
+        return x(d[year_sig]) + 1;
+    }).text(function(d) {
+        return d[year_sig];
+    });
+});
+d3.csv("trialsbycondition2003-2017.csv", function(error, data){
+    svgcondition.selectAll("circle").remove();
+    svgcondition.selectAll("text").remove(); 
+        //convert numerical values from strings to numbers
+    data = data.map(function(d){ d.value = +d[year_sig]; return d; });
+    //bubbles needs very specific format, convert data to this.
+    var nodes = bubble.nodes({children:data}).filter(function(d) { return !d.children; });
 
-			// 	// Modification of custom tooltip code provided by Malcolm Maclean, "D3 Tips and Tricks" 
-			// 	// http://www.d3noob.org/2013/01/adding-tooltips-to-d3js-graph.html
-			// 		.on("mouseover", function(d) {      
-			// 	    	div.transition()        
-			// 	      	   .duration(200)      
-			// 	           .style("opacity", .9);      
-			// 	           div.text(d.place)
-			// 	           .style("left", (d3.event.pageX) + "px")     
-			// 	           .style("top", (d3.event.pageY - 28) + "px");    
-			// 		})   
+    //setup the chart
+    var bubbles = svgcondition.append("g")
+        .attr("transform", "translate(0,0)")
+        .selectAll(".bubble")
+        .data(nodes)
+        .enter();
 
-			//     	// fade out tooltip on mouse out               
-			// 	    .on("mouseout", function(d) {       
-			// 	        div.transition()        
-			// 	           .duration(500)      
-			// 	           .style("opacity", 0);   
-			// 	    });
-			// });  
-			        
-			// // Modified Legend Code from Mike Bostock: http://bl.ocks.org/mbostock/3888852
-			// var legend = d3.select("body").append("svg")
-			//       			.attr("class", "legend")
-			//      			.attr("width", 140)
-			//     			.attr("height", 200)
-			//    				.selectAll("g")
-			//    				.data(color.domain().slice().reverse())
-			//    				.enter()
-			//    				.append("g")
-			//      			.attr("transform", function(d, i) { return "translate(0," + i * 20 + ")"; });
+    //create the bubbles
+    bubbles.append("circle")
+        .attr("r", function(d){ return d.r*0.75; })
+        .attr("cx", function(d){ return d.x; })
+        .attr("cy", function(d){ return d.y; })
+        .style("fill", function(d) { return color(d.value); })
+    .on("mouseover", function(d) {      
+								    	div.transition()        
+								      	   .duration(200)      
+								           .style("opacity", .9);      
+								           div.text(d["Condition"])
+								           .style("left", (d3.event.pageX) + "px")     
+								           .style("top", (d3.event.pageY - 28) + "px");    
+									})   
 
-			//   	legend.append("rect")
-			//    		  .attr("width", 18)
-			//    		  .attr("height", 18)
-			//    		  .style("fill", color);
+							    	// fade out tooltip on mouse out               
+								    .on("mouseout", function(d) {       
+								        div.transition()        
+								           .duration(500)      
+								           .style("opacity", 0);   
+								    })
+    ;
+    //format the text for each bubble
+    bubbles.append("text")
+    .filter(function(d) { return d[year_sig]>1 })
+        .attr("x", function(d){ return d.x; })
+        .attr("y", function(d){ return d.y; })
+        .attr("text-anchor", "middle")
+        .text(function(d){ return d["Condition"]; })
+        .style({
+            "fill":"Black", 
+            "font-family":"Helvetica Neue, Helvetica, Arial, san-serif",
+            "font-size": "8px"
+        });
+        bubbles.append("text")
+    .filter(function(d) { return d[year_sig]>1 })
+        .attr("x", function(d){ return d.x; })
+        .attr("y", function(d){ return d.y+10; })
+        .attr("text-anchor", "middle")
+        .text(function(d){ return d[year_sig]; })
+        .style({
+            "fill":"white", 
+            "font-family":"Helvetica Neue, Helvetica, Arial, san-serif",
+            "font-size": "8px"
+        });
+})                
+d3.csv("trialsbyStudyType2003-2017.csv", function(error, data){
+svgStudyType.selectAll("g.slice").remove();
+    var pie = d3.layout.pie().value(function(d){return d[year_sig];});
+// Declare an arc generator function
+var arc = d3.svg.arc().outerRadius(r);
+// Select paths, use arc generator to draw
+var arcs = svgStudyType.selectAll("g.slice").data(pie).enter().append("svg:g").attr("class", "slice");
+arcs.append("svg:path")
+    .attr("fill", function(d, i){return aColor[i];})
+    .attr("d", function (d) {return arc(d);})
+;
+// Add the text
+arcs.append("svg:text")
+    .attr("transform", function(d){
+        d.innerRadius = 80; /* Distance of label to the center*/
+        d.outerRadius = r;
+        return "translate(" + arc.centroid(d) + ")";}    )
+    .attr("text-anchor", "middle")
+    .text( function(d, i) {return data[i].StudyType +" "+ data[i][year_sig];})
+;
+    });
+d3.csv("trialsbyFunder2003-2017.csv", function(error, data){
+    svgfunder.selectAll("g.slice").remove();
+    var pie = d3.layout.pie().value(function(d){return d[year_sig];});
+// Declare an arc generator function
+var arc = d3.svg.arc().outerRadius(r);
+// Select paths, use arc generator to draw
+var arcs = svgfunder.selectAll("g.slice").data(pie).enter().append("svg:g").attr("class", "slice");
+arcs.append("svg:path")
+    .attr("fill", function(d, i){return aColor[i];})
+    .attr("d", function (d) {return arc(d);})
+;
+// Add the text
+arcs.append("svg:text")
+    .attr("transform", function(d){
+        d.innerRadius = 80; /* Distance of label to the center*/
+        d.outerRadius = r;
+        return "translate(" + arc.centroid(d) + ")";}    )
+    .attr("text-anchor", "middle")
+    .text( function(d, i) {return data[i].funder +" "+ data[i][year_sig];});
+    });                  
+                
+d3.csv("trialsbyGender2003-2017.csv", function(error, data){
+    svggender.selectAll("g.slice").remove();
+    var pie = d3.layout.pie().value(function(d){return d[year_sig];});
+// Declare an arc generator function
+var arc = d3.svg.arc().outerRadius(r);
+// Select paths, use arc generator to draw
+var arcs = svggender.selectAll("g.slice").data(pie).enter().append("svg:g").attr("class", "slice");
+arcs.append("svg:path")
+    .attr("fill", function(d, i){return aColor[i];})
+    .attr("d", function (d) {return arc(d);})
+;
+// Add the text
+arcs.append("svg:text")
+    .attr("transform", function(d){
+        d.innerRadius = 80; /* Distance of label to the center*/
+        d.outerRadius = r;
+        return "translate(" + arc.centroid(d) + ")";}    )
+    .attr("text-anchor", "middle")
+    .text( function(d, i) {return data[i].Gender +" "+ data[i][year_sig];});
+    });
+                
+d3.csv("trialsbyAgeGroup2003-2017.csv", function(error, data){
+    svgage.selectAll("g.slice").remove();
+    var pie = d3.layout.pie().value(function(d){return d[year_sig];});
+// Declare an arc generator function
+var arc = d3.svg.arc().outerRadius(r);
+// Select paths, use arc generator to draw
+var arcs = svgage.selectAll("g.slice").data(pie).enter().append("svg:g").attr("class", "slice");
+arcs.append("svg:path")
+    .attr("fill", function(d, i){return aColor[i];})
+    .attr("d", function (d) {return arc(d);})
+;
+// Add the text
+arcs.append("svg:text")
+    .attr("transform", function(d){
+        d.innerRadius = 80; /* Distance of label to the center*/
+        d.outerRadius = r;
+        return "translate(" + arc.centroid(d) + ")";}    )
+    .attr("text-anchor", "middle")
+    .text( function(d, i) {return data[i].age +" "+ data[i][year_sig];});
+    });                
+                
+};
 
-			//   	legend.append("text")
-			//   		  .data(legendText)
-			//       	  .attr("x", 24)
-			//       	  .attr("y", 9)
-			//       	  .attr("dy", ".35em")
-			//       	  .text(function(d) { return d; 	
-			//       	  });
-			// 	});
-			// });
+var diameter = 500, //max size of the bubbles
+    color    = d3.scale.category20(); //color category
+
+var bubble = d3.layout.pack()
+    .sort(null)
+    .size([diameter, diameter])
+    .padding(1.5);
+
+var svgcondition = d3.select("#condition")
+    .append("svg")
+    .attr("width", diameter)
+    .attr("height", diameter)
+    .attr("class", "bubble");
+
+d3.csv("trialsbycondition2003-2017.csv", function(error, data){
+        //convert numerical values from strings to numbers
+    data = data.map(function(d){ d.value = +d["r_2017"]; return d; });
+    //bubbles needs very specific format, convert data to this.
+    var nodes = bubble.nodes({children:data}).filter(function(d) { return !d.children; });
+
+    //setup the chart
+    var bubbles = svgcondition.append("g")
+        .attr("transform", "translate(0,0)")
+        .selectAll(".bubble")
+        .data(nodes)
+        .enter();
+
+    //create the bubbles
+    bubbles.append("circle")
+        .attr("r", function(d){ return d.r*0.75; })
+        .attr("cx", function(d){ return d.x; })
+        .attr("cy", function(d){ return d.y; })
+        .style("fill", function(d) { return color(d.value); })
+    .on("mouseover", function(d) {      
+								    	div.transition()        
+								      	   .duration(200)      
+								           .style("opacity", .9);      
+								           div.text(d["Condition"])
+								           .style("left", (d3.event.pageX) + "px")     
+								           .style("top", (d3.event.pageY - 28) + "px");    
+									})   
+
+							    	// fade out tooltip on mouse out               
+								    .on("mouseout", function(d) {       
+								        div.transition()        
+								           .duration(500)      
+								           .style("opacity", 0);   
+								    })
+    ;
+
+    //format the text for each bubble
+    bubbles.append("text")
+    .filter(function(d) { return d["r_2017"]>0 })
+        .attr("x", function(d){ return d.x; })
+        .attr("y", function(d){ return d.y; })
+        .attr("text-anchor", "middle")
+        .text(function(d){ return d["Condition"]; })
+        .style({
+            "fill":"Black", 
+            "font-family":"Helvetica Neue, Helvetica, Arial, san-serif",
+            "font-size": "8px"
+        });
+        bubbles.append("text")
+    .filter(function(d) { return d["r_2017"]>1 })
+        .attr("x", function(d){ return d.x; })
+        .attr("y", function(d){ return d.y+10; })
+        .attr("text-anchor", "middle")
+        .text(function(d){ return d["r_2017"]; })
+        .style({
+            "fill":"white", 
+            "font-family":"Helvetica Neue, Helvetica, Arial, san-serif",
+            "font-size": "8px"
+        });
+});
+
+    var w = 500,                        //width
+    h = 400,                            //height
+    r = 150,                            //radius
+    aColor = [
+    'rgb(178, 55, 56)',
+    'rgb(213, 69, 70)',
+    'rgb(230, 125, 126)',
+    'rgb(239, 183, 182)'
+];     //builtin range of colors
+    var svgStudyType = d3.select("#type")
+        .append("svg:svg").attr("width", w).attr("height", h).append("svg:g").attr("transform", "translate(" + r + "," + r + ")");
+d3.csv("trialsbyStudyType2003-2017.csv", function(error, data){
+    svgStudyType.data([data])
+    var pie = d3.layout.pie().value(function(d){return d.r_2017;});
+// Declare an arc generator function
+var arc = d3.svg.arc().outerRadius(r);
+// Select paths, use arc generator to draw
+var arcs = svgStudyType.selectAll("g.slice").data(pie).enter().append("svg:g").attr("class", "slice");
+arcs.append("svg:path")
+    .attr("fill", function(d, i){return aColor[i];})
+    .attr("d", function (d) {return arc(d);})
+;
+// Add the text
+arcs.append("svg:text")
+    .attr("transform", function(d){
+        d.innerRadius = 80; /* Distance of label to the center*/
+        d.outerRadius = r;
+        return "translate(" + arc.centroid(d) + ")";}    )
+    .attr("text-anchor", "middle")
+    .text( function(d, i) {return data[i].StudyType +" "+ data[i].r_2017;})
+;
+    });
+    var svggender = d3.select("#gender")
+        .append("svg:svg").attr("width", w).attr("height", h).append("svg:g").attr("transform", "translate(" + r + "," + r + ")");
+d3.csv("trialsbyGender2003-2017.csv", function(error, data){
+    svggender.data([data]);
+    var pie = d3.layout.pie().value(function(d){return d.r_2017;});
+// Declare an arc generator function
+var arc = d3.svg.arc().outerRadius(r);
+// Select paths, use arc generator to draw
+var arcs = svggender.selectAll("g.slice").data(pie).enter().append("svg:g").attr("class", "slice");
+arcs.append("svg:path")
+    .attr("fill", function(d, i){return aColor[i];})
+    .attr("d", function (d) {return arc(d);})
+;
+// Add the text
+arcs.append("svg:text")
+    .attr("transform", function(d){
+        d.innerRadius = 80; /* Distance of label to the center*/
+        d.outerRadius = r;
+        return "translate(" + arc.centroid(d) + ")";}    )
+    .attr("text-anchor", "middle")
+    .text( function(d, i) {return data[i].Gender +" "+ data[i].r_2017;})
+;
+    });
+    var svgfunder = d3.select("#funder")
+        .append("svg:svg").attr("width", w).attr("height", h).append("svg:g").attr("transform", "translate(" + r + "," + r + ")");
+d3.csv("trialsbyFunder2003-2017.csv", function(error, data){
+    svgfunder.data([data]);
+    var pie = d3.layout.pie().value(function(d){return d.r_2017;});
+// Declare an arc generator function
+var arc = d3.svg.arc().outerRadius(r);
+
+// Select paths, use arc generator to draw
+var arcs = svgfunder.selectAll("g.slice").data(pie).enter().append("svg:g").attr("class", "slice");
+arcs.append("svg:path")
+    .attr("fill", function(d, i){return aColor[i];})
+    .attr("d", function (d) {return arc(d);})
+;
+// Add the text
+arcs.append("svg:text")
+    .attr("transform", function(d){
+        d.innerRadius = 80; /* Distance of label to the center*/
+        d.outerRadius = r;
+        return "translate(" + arc.centroid(d) + ")";}    )
+    .attr("text-anchor", "middle")
+    .text( function(d, i) {return data[i].funder +" "+ data[i].r_2017;})
+;
+ 
+    });
+    var svgage = d3.select("#age")
+        .append("svg:svg").attr("width", w).attr("height", h).append("svg:g").attr("transform", "translate(" + r + "," + r + ")");
+d3.csv("trialsbyAgeGroup2003-2017.csv", function(error, data){
+    svgage.data([data]);
+    var pie = d3.layout.pie().value(function(d){return d.r_2017;});
+// Declare an arc generator function
+var arc = d3.svg.arc().outerRadius(r);
+// Select paths, use arc generator to draw
+var arcs = svgage.selectAll("g.slice").data(pie).enter().append("svg:g").attr("class", "slice");
+arcs.append("svg:path")
+    .attr("fill", function(d, i){return aColor[i];})
+    .attr("d", function (d) {return arc(d);})
+;
+// Add the text
+arcs.append("svg:text")
+    .attr("transform", function(d){
+        d.innerRadius = 80; /* Distance of label to the center*/
+        d.outerRadius = r;
+        return "translate(" + arc.centroid(d) + ")";}    )
+    .attr("text-anchor", "middle")
+    .text( function(d, i) {return data[i].age +" "+ data[i].r_2017;});
+    });
+
 	function findMaxY(data){  // Define function "findMaxY"
 	    var maxYValues = data.map(function(d) { 
 	      if (d.visible){

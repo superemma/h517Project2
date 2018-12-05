@@ -41,7 +41,15 @@
 		body {
 			font: 11px sans-serif;
 		}
-		h1 {
+		h2 {text-align: center;
+            font-size: 14px;
+                margin: .5em .5em;
+        }  
+        		h3 {text-align: center;
+            font-size: 20px;
+                margin: .5em .5em;
+        }  
+        		h1 {
                 text-align: center;
                 margin: .5em .5em;
         }  
@@ -124,7 +132,7 @@
 	</style>
 	<body>
 		<div class="container">
-			<h1><a href="" target="_blank">Obesity Trend of 2003-2017 in the US</a></h1>
+			<h1><a href="" target="_blank">Obesity Visualization of Past Decades in the US</a></h1>
 		</div>
 		
 		<div class="row" style="background-color: white;">
@@ -140,6 +148,19 @@
 				
 			</div>
 		</div>
+        <div class="row"><h3>Distribution of Clinical Trial Studies</h3></div>
+        <div class="row">
+  <div class="col-sm-3" id='condition'><h2>Co-studied Conditions</h2></div>
+  <div class="col-sm-3" id='intervention'><h2>Interventions</h2></div>
+  <div class="col-sm-3" id='type'><h2>Study Type</h2></div>
+  <div class="col-sm-3" id='enroll'><h2>Enrollment Trends</h2></div>
+</div>
+  <div class="row">
+  <div class="col-sm-3" id='gender'><h2>Gender</h2></div>
+  <div class="col-sm-3" id='age'><h2>Age</h2></div>
+  <div class="col-sm-3" id='phase'><h2>Study Phase</h2></div>
+  <div class="col-sm-3" id='funder'><h2>Funded by</h2></div>
+</div>
 		<script src="main.js"></script>
 		<script src="timeline.js"></script>
 	</body>
