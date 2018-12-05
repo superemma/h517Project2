@@ -26,6 +26,7 @@
 			for(var i=0;i<6;i++){
 
 			}
+            var year = "2017"
 			//Create SVG element and append map to the SVG
 			var svg = d3.select("#usmap")
 						.append("svg")
@@ -36,9 +37,6 @@
 						.append("svg")
 						.attr("width", width*2)
 						.attr("height", 100);
-
-			
-
 			// });
 			//label the time line:
 			var circle_x = [];
@@ -323,6 +321,7 @@ d3.csv("trialsbyPhase2003-2017.csv", function(data) {
 				//console.log(d);
 				//console.log(i);
 				var index=i;
+                var year = year_arr[index];
                 var year_sig = year_arr[index];
 				d3.select(this).attr({
 					fill:"orange",
