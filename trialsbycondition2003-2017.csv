@@ -1,0 +1,290 @@
+Condition,r_2003,r_2004,r_2005,r_2006,r_2007,r_2008,r_2009,r_2010,r_2011,r_2012,r_2013,r_2014,r_2015,r_2016,r_2017
+AIDS,0,0,0,0,0,0,1,1,1,1,1,1,0,0,0
+Abdominal Obesity,0,0,0,0,1,2,3,4,4,4,2,2,2,1,0
+Acquired Hypogonadotropic Hypogonadism,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1
+Acute Lymphoblastic Leukemia,0,0,0,0,0,1,1,1,1,1,1,0,0,0,0
+Adiposity,0,0,0,0,0,0,0,0,1,1,2,1,2,2,1
+Adolescent,0,0,0,0,0,0,0,0,0,1,1,1,1,0,0
+Adolescent Mothers,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0
+Adolescent Obesity,0,0,0,0,0,1,3,3,3,3,3,2,1,1,0
+Affect,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+"Affective Disorders, Psychotic",0,0,0,0,0,0,0,0,0,1,1,1,0,0,0
+Aging,0,0,0,1,1,1,1,1,2,2,2,0,0,0,0
+Albright Hereditary Osteodystrophy,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1
+Anorexia Nervosa,0,0,0,1,1,1,1,0,0,0,0,0,0,0,0
+Anxiety,0,0,0,0,0,0,0,0,1,1,1,1,1,1,0
+Appetite,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0
+Asthma,0,0,2,3,4,3,2,5,6,5,5,5,8,8,4
+Atypical Depression,0,0,1,1,1,0,0,0,0,0,0,0,0,0,0
+Autism,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0
+Bariatric Surgery,0,0,0,1,1,3,2,2,2,3,3,1,1,1,1
+Basal Metabolic Rate,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+"Behavior, Eating",0,0,0,0,0,0,0,1,1,1,1,1,1,1,0
+Behavioral,0,0,0,0,0,0,0,0,0,1,1,1,1,1,0
+Behavioral Research,0,0,0,0,0,1,1,1,0,0,0,0,0,0,0
+Binge Eating Disorder,0,0,2,3,4,7,8,6,5,4,5,3,3,1,0
+Bipolar Disorder,0,0,0,0,1,1,1,0,0,0,0,0,0,0,0
+Blood Glucose,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0
+Blood Insulin,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0
+Blood Pressure,0,0,0,0,0,0,0,0,1,1,1,1,1,0,0
+"Body Composition, Beneficial",0,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+Body Weight,0,0,0,1,1,2,1,2,3,2,2,3,4,3,0
+Bone and Body Composition,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+Breast Cancer,0,1,3,3,3,2,4,4,4,6,4,4,4,2,0
+Breast Cancer Survivorship,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1
+Breastfeeding,0,0,0,0,0,0,0,1,0,0,0,0,1,1,0
+C-reactive Protein,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0
+Cancer,0,0,1,1,2,2,1,1,1,1,2,1,1,1,0
+Cardiovascular Abnormalities,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0
+Cardiovascular Diseases,1,8,9,9,10,9,9,5,5,5,7,9,7,3,1
+Cardiovascular Risk,0,0,1,1,2,1,3,3,3,2,2,2,2,1,0
+Central Obesity,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1
+Cesarean Section Complications,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+Child,0,0,0,0,0,0,0,0,0,0,1,2,2,1,1
+Child Adiposity,0,0,0,0,0,0,0,0,0,0,1,1,1,1,0
+Child Behavior Problems,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+Child Mental Disorders,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1
+Childhood Overweight,0,0,0,0,0,0,1,1,1,1,1,0,0,0,0
+Chronic Diseases,0,0,0,0,0,0,0,0,1,1,1,1,1,1,0
+Chronic Illness,0,0,0,0,1,1,1,1,0,0,0,0,0,0,0
+Chronic Weight Management,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+Colorectal Cancer,0,0,0,0,1,2,2,0,0,0,0,0,0,0,0
+Communication,0,0,0,0,0,0,1,1,1,1,1,0,0,0,0
+Complication of Transplant,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+Complications of Bariatric Procedures,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+Complications; Cesarean Section,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+Contraception,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0
+Coronary Heart Disease,0,0,0,0,0,0,0,1,1,1,1,1,1,0,0
+Craniopharyngioma,0,0,0,0,0,0,0,0,0,1,1,2,1,0,0
+Daily Self-weighing,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+Daily Temperature-taking,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+Decision Aids,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Deep Sedation,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1
+Dental Decay,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0
+Depression,0,1,1,2,3,3,4,3,5,5,4,2,3,2,2
+Developmental Delay,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0
+Diabetes,1,2,4,5,5,9,9,9,8,9,7,6,6,4,2
+Diet,0,0,0,0,1,2,1,1,0,0,0,0,0,0,0
+Diet Therapy,0,0,0,0,0,0,0,1,1,1,2,1,1,1,1
+Dietary,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Dietary Habits,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+Dietary Intake,0,0,0,0,0,0,1,1,1,1,1,1,1,1,0
+Down Syndrome,0,0,0,1,1,1,1,1,0,0,0,0,0,0,0
+Drug Safety,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0
+Dyslipidemia,0,1,0,1,1,2,2,0,2,2,2,3,2,2,1
+Dysthymic Disorder,0,0,0,0,0,0,0,0,0,1,1,1,1,0,0
+Eating Behavior,0,0,0,0,0,1,2,2,2,2,3,3,3,2,0
+Eating Disorders,0,0,1,1,1,0,0,0,1,2,2,2,2,2,1
+Elective Surgery,0,0,0,0,0,0,1,1,1,1,0,0,0,0,0
+Elevated Cholesterol,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+End Stage Cardiac Failure,0,0,0,1,1,1,1,1,1,1,0,0,0,0,0
+End Stage Liver Disease,0,0,0,1,1,1,1,1,1,1,0,0,0,0,0
+End Stage Renal Disease,0,0,0,0,0,1,1,1,1,1,1,1,1,0,0
+Endocrine Disease,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1
+Endocrine System Diseases,0,0,0,0,0,0,0,0,1,1,1,1,1,1,0
+Endometrial Cancer,0,0,0,0,0,0,0,0,0,0,1,1,1,1,0
+Endometrial Pathology,0,0,0,0,0,0,0,0,1,1,1,1,1,0,0
+Endothelial Dysfunction,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0
+Endothelial Function,0,0,0,0,0,0,0,0,1,1,1,1,1,0,0
+Energy Metabolism,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+Excessive Weight Gain,0,0,0,0,1,1,1,1,1,0,0,0,0,0,0
+Executive Function (Cognition),1,1,1,1,0,0,0,0,0,0,0,0,0,0,0
+Exercise,0,0,0,0,0,1,1,1,0,0,0,0,0,0,0
+Family,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1
+Fatty Liver,1,1,2,2,1,1,1,0,0,0,1,1,0,0,0
+Feeding Behavior,0,0,0,0,0,0,0,1,1,1,1,1,1,1,0
+Feeding Patterns,0,0,0,0,0,0,0,1,1,1,1,1,0,0,0
+Fetal Growth,0,0,0,0,0,0,1,1,1,1,0,0,0,0,0
+Fibromyalgia,0,0,0,0,0,0,1,1,1,0,0,0,0,0,0
+Fitness,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+Food Habits,0,0,0,0,0,0,1,1,1,1,1,1,1,0,0
+Food Preferences,0,0,0,0,0,0,0,0,1,1,1,1,0,0,0
+Gastric Bypass,0,0,0,0,0,0,1,1,2,2,2,2,1,0,0
+Gastroesophageal Reflux Disease,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0
+Genetic Change,0,0,0,0,0,0,0,1,1,1,1,1,1,1,0
+Genetic Disorder,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0
+Gestational Diabetes,0,0,0,0,0,0,0,0,1,2,3,2,1,1,0
+Glucose Intolerance,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0
+Glucose Metabolism Disorders,0,0,0,0,0,0,0,0,1,2,1,1,1,1,0
+Gonadal Dysfunction,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1
+Growth Hormone,0,0,0,0,1,1,1,0,0,0,0,0,0,0,0
+Growth Hormone Deficiency,0,0,0,0,0,1,1,1,1,1,0,0,0,0,0
+Growth Hormone Secretion Abnormality,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0
+Gut Microbiota,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0
+HIV,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1
+Habituation,0,0,0,0,0,0,1,1,1,1,1,1,0,0,0
+Haemophilia A,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+Haemophilia B,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+Health Behavior,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1
+Health Behaviors,0,0,0,0,0,0,0,0,0,1,1,1,1,0,0
+Heart Diseases,1,5,6,7,7,6,4,3,3,1,1,1,0,0,0
+Hepatitis,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0
+Hernia,0,0,0,0,1,1,1,0,0,0,0,0,0,0,0
+High Blood Pressure,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0
+High Cardiovascular Risk,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1
+Hot Flushes,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0
+Hunger,0,0,0,0,0,0,0,0,0,1,1,1,1,1,0
+Hypercholesterolemia,0,2,1,0,0,1,1,1,0,0,1,1,0,0,0
+Hyperglycemia,0,0,0,0,0,0,0,0,1,2,1,1,1,1,0
+Hyperinsulinemia,0,1,1,1,1,1,1,1,1,0,0,0,0,0,0
+Hyperlipidemia,0,3,4,3,4,2,0,1,1,1,0,1,1,0,0
+Hyperphagia,0,0,0,0,0,0,0,0,0,0,1,1,1,1,0
+Hypertension,2,4,4,2,3,2,2,6,6,5,5,7,5,4,3
+Hypertriglyceridemia,0,0,0,0,0,0,0,0,0,1,1,1,1,0,0
+Hypogonadism,0,0,0,1,1,1,1,1,1,1,1,0,0,0,0
+Hypothalamic Amenorrhea,0,0,0,1,1,1,1,0,0,0,0,0,0,0,0
+Hypothalamic Injury,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+Hypovitaminosis D,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0
+Hypoxia,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+Idiopathic Intracranial Hypertension,0,0,0,0,0,0,0,1,1,1,1,0,0,0,0
+Impact of Parent Intervention on Adolescent Weight Loss,0,0,0,0,0,0,0,0,1,1,1,1,1,0,0
+Impaired Glucose Tolerance,1,1,1,0,0,2,2,1,2,1,1,1,1,0,0
+Impulsivity,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1
+Inadequate Initial Weight Loss,0,0,0,0,0,1,3,0,0,0,0,0,0,0,0
+Inadequate Weight Loss,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+Infant Behavior,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+Infant Development,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1
+Infant Obesity,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0
+Infant Overnutrition,0,0,0,0,0,0,0,1,1,1,1,1,0,0,0
+Infection; Cesarean Section,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+Infertility,0,0,0,0,0,0,0,0,1,2,2,0,0,0,0
+"Infertility, Female",0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+Inflammation,0,0,0,1,1,1,2,3,4,6,4,2,1,1,2
+Inflammatory Response,0,0,0,0,0,0,0,1,1,1,1,1,1,1,0
+Injury,0,0,0,0,0,0,0,1,1,1,1,1,0,0,0
+Insulin Resistance,1,5,12,13,14,16,16,12,11,10,10,7,7,5,3
+Intestinal Malabsorptive Syndrome,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0
+Intractable Obesity,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+Kidney Diseases,0,1,1,1,1,1,1,1,1,1,1,1,0,0,0
+Laparoscopy,0,0,0,0,1,1,1,0,0,0,0,0,0,0,0
+Lead Poisoning,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0
+Leanness,0,0,0,0,0,0,0,0,0,1,1,1,1,0,0
+Leprosy,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0
+Lifestyle,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1
+MRSA,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0
+Major Depressive Disorder,0,0,0,0,0,0,0,0,0,1,1,1,1,0,0
+Maternal Exposure,0,0,0,0,0,0,0,1,1,1,1,1,1,1,0
+Menopause,0,0,0,0,0,0,0,0,0,1,1,1,1,1,0
+"Menopause, Premature",0,0,0,0,0,0,0,1,1,1,0,0,0,0,0
+Menstrual Irregularities,0,0,0,0,0,0,0,0,1,1,1,1,1,0,0
+Mental Disorders,0,0,0,0,0,0,0,0,0,1,1,2,1,1,1
+Mental Illness,0,0,0,1,1,1,1,1,0,0,0,0,0,0,0
+Mental Retardation,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0
+Metabolic Complications After Jejunoileal Bypass,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0
+Metabolic Disease,0,0,0,0,0,0,0,0,0,1,2,3,2,2,1
+Metabolic Diseases,0,0,0,0,0,0,0,0,2,2,2,2,1,1,0
+Metabolic Syndrome,1,3,6,5,5,8,12,10,11,10,9,8,6,3,1
+Metabolic Syndrome X,0,1,3,4,5,4,3,2,1,0,0,0,0,0,0
+Metabolism,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+Metabolism and Nutrition Disorder,0,0,0,0,0,1,1,1,2,2,2,1,2,3,4
+"Molecular Biology, Restriction Fragment Length Polymorphisms",0,0,0,0,0,0,0,1,1,1,1,1,1,1,0
+Motor Activity,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0
+Narcolepsy,0,0,0,1,1,1,1,1,1,1,1,0,0,0,0
+Neural Response in Caudate,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1
+Nicotine Dependence,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0
+Non-Alcoholic Steatohepatitis,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0
+Non-alcoholic Fatty Liver Disease,0,1,2,5,5,6,6,5,6,5,3,2,2,3,2
+Noninvasive Ventilation,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1
+Nutrition,0,0,1,1,1,0,1,2,2,2,2,1,1,1,0
+Nutrition Disorders,0,0,0,0,0,0,1,2,2,2,1,1,1,1,0
+Nutrition Therapy,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1
+Nutritional Complications After Jejunoileal Bypass,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0
+Obesity Hypoventilation Syndrome,0,0,0,0,0,0,0,0,1,1,1,1,0,0,0
+Obesity Prevention,0,0,1,1,1,0,0,1,1,1,1,1,0,0,0
+Obesity Recidivism,0,0,0,0,0,1,4,0,0,0,0,0,0,0,0
+Obstructive Sleep Apnea,0,1,1,1,1,1,1,1,2,2,2,1,2,2,1
+Osteoarthritis,0,0,0,2,2,2,1,1,1,0,0,1,1,1,0
+Overeating,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1
+Overnutrition,0,0,0,0,1,1,1,1,2,1,1,1,1,1,0
+Overweight Adolescents,0,0,1,1,1,1,1,1,1,1,1,1,1,1,0
+Overweight With Indications for Weight Loss,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0
+Oxidative Stress,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0
+PCP,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0
+PTSD,0,0,0,0,0,0,0,0,1,1,1,1,1,1,0
+PURE AUTONOMIC FAILURE,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+"Pain, Postoperative",0,0,0,0,1,1,0,0,0,0,0,0,0,0,0
+Paraplegia,0,0,0,0,0,1,1,1,1,0,0,0,0,0,0
+Parent and Child Stress,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0
+Parental Stress,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0
+Parental and Child Obesity,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0
+Parenting Skills,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+Peri-implant Inflammation,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0
+Peri-implantitis,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0
+Peripheral Neuropathy,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1
+Persistent Obesity,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+Pharmacokinetics,0,0,0,0,0,1,0,1,1,1,0,0,0,0,0
+Physical Fitness,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+Physical Function,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+Pneumonia,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+Polycystic Ovarian Syndrome,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0
+Polycystic Ovarian Syndrome (PCOS),0,0,0,0,0,0,0,1,1,1,1,1,1,0,0
+Polycystic Ovary Syndrome,0,0,1,2,3,2,1,1,2,2,2,2,1,0,1
+Poor Weight Loss,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+Postoperative Nausea and Vomiting,0,0,0,0,0,1,1,1,1,0,0,0,0,0,0
+Postoperative Pain,0,0,0,0,0,1,1,1,1,0,0,0,0,0,0
+Postpartum Deep Phlebothrombosis,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+Postpartum Depression,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0
+Postpartum Period,0,0,0,0,1,1,1,1,1,0,0,0,0,0,0
+Prader Willi Syndrome,0,1,1,0,0,0,0,0,0,0,0,1,1,1,0
+Prader-Willi Syndrome,0,0,0,1,1,1,1,1,1,2,3,2,1,1,0
+Pre Diabetes,0,0,2,3,4,3,6,5,4,3,4,7,7,7,3
+Pre Hypertension,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0
+Pre diabetes,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Pregnancy,0,0,0,0,1,1,3,3,4,6,8,8,6,4,3
+Prematurity,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+Protein Malnutrition,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0
+Pseudohypoparathyroidism,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1
+Psoriasis,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0
+Psychotic Disorder,0,0,0,0,1,1,1,1,0,0,0,0,0,0,0
+Psychotic Disorders,0,0,0,0,0,0,0,0,0,1,1,1,1,0,0
+Pulmonary Atelectasis,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+Pulmonary Embolism,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+Pulmonary Failure,0,0,0,1,1,1,1,1,1,1,0,0,0,0,0
+Quadriplegia,0,0,0,0,0,1,1,1,1,0,0,0,0,0,0
+Quality of Life,0,0,0,0,1,1,2,0,0,0,0,0,1,1,1
+Rapid Eating Style,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0
+Recalcitrant Epilepsy Requiring Surgery,0,0,0,1,1,1,1,1,1,1,0,0,0,0,0
+Refractory Obesity,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+Renal Function,0,0,0,0,0,0,0,0,1,1,1,1,1,0,0
+Respiratory Complication,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0
+SHY-DRAGER SYNDROME,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Sarcopenia,0,0,0,1,1,1,1,0,0,1,1,1,0,0,0
+Satiety,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+Schizoaffective Disorder,0,1,1,1,0,1,1,1,0,0,0,0,0,0,0
+Schizophrenia,0,2,2,2,2,3,3,4,1,1,1,2,1,1,1
+Sedentary,0,0,1,1,1,1,2,2,1,0,1,1,1,0,0
+Sedentary Activity,0,0,0,0,0,0,0,1,1,1,1,0,0,0,0
+Sedentary Lifestyle,0,0,0,0,0,0,0,1,1,2,2,0,0,0,1
+Severe to Morbid Obesity,0,0,1,1,1,0,0,0,0,0,0,0,0,0,0
+Sleep,0,0,0,0,0,0,1,1,1,1,2,1,1,1,0
+Sleep Apnea,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0
+Sleep Deprivation,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1
+Sleep Disorders,0,0,0,0,0,0,2,2,1,1,0,0,0,0,0
+Sleep-disordered Breathing,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0
+Small for Gestational Age,0,0,0,1,0,0,0,0,0,0,0,0,1,1,0
+Smoking,0,0,0,0,0,0,0,0,0,0,2,2,1,1,0
+Spinal Cord Injury,0,0,0,0,0,1,1,1,1,0,0,0,0,0,0
+Steatohepatitis,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0
+"Stress, Physiological",0,0,0,0,0,0,0,0,1,1,1,1,0,0,0
+"Stress, Psychological",0,0,0,0,0,0,0,0,1,1,1,1,0,0,0
+Subcutaneous Abdominal Adiposity,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0
+Surgery,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1
+Syndromic Obesity,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0
+Television Viewing,0,0,0,0,0,0,0,1,1,1,1,0,0,0,0
+Thinness,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0
+Tuberculosis,0,0,0,0,0,0,0,3,2,2,0,0,0,0,0
+Type 1 Diabetes,0,0,0,0,0,0,0,1,1,1,0,0,0,1,1
+Type 2 Diabetes,2,6,7,10,18,16,15,14,16,16,14,15,14,14,14
+Type 2 Diabetes Prevention,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0
+Type 2 Diabetes Risk,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0
+Urinary Incontinence,0,1,1,1,1,0,0,0,0,0,0,0,0,0,0
+Venous Thromboembolism,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+Visceral Adipose Tissue Accumulation,0,0,0,0,0,0,0,0,0,1,1,1,1,1,0
+Vitamin D Deficiency,0,0,0,0,0,0,1,2,5,6,3,0,0,0,0
+Weight Changes,0,1,1,1,2,3,4,2,2,2,2,1,1,1,0
+Weight Loss Maintenance,0,0,0,0,0,0,1,2,2,2,2,2,2,1,0
+Weight Loss Trial,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1
+Weight Maintenance,0,0,1,1,1,1,1,1,1,0,0,0,0,0,0
+Weight Recidivism,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+Weight Reduction,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1
+Weight Regain,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0
