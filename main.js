@@ -526,7 +526,7 @@ d3.csv("trialsbycondition2003-2017.csv", function(error, data){
         .attr("r", function(d){ return d.r*0.75; })
         .attr("cx", function(d){ return d.x; })
         .attr("cy", function(d){ return d.y; })
-        .style("fill", function(d) { return color(d.value); })
+        .style("fill", function(d) { return Ccolor(d.value); })
     .on("mouseover", function(d) {      
 								    	div.transition()        
 								      	   .duration(200)      
@@ -654,7 +654,7 @@ arcs.append("svg:text")
 };
 
 var diameter = 500, //max size of the bubbles
-    color    = d3.scale.category20(); //color category
+    Ccolor    = d3.scale.category20(); //color category
 
 var bubble = d3.layout.pack()
     .sort(null)
@@ -685,7 +685,7 @@ d3.csv("trialsbycondition2003-2017.csv", function(error, data){
         .attr("r", function(d){ return d.r*0.75; })
         .attr("cx", function(d){ return d.x; })
         .attr("cy", function(d){ return d.y; })
-        .style("fill", function(d) { return color(d.value); })
+        .style("fill", function(d) { return Ccolor(d.value); })
     .on("mouseover", function(d) {      
 								    	div.transition()        
 								      	   .duration(200)      
