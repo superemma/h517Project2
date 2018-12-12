@@ -1,10 +1,7 @@
 // Set the dimensions of the canvas / graph
-var emargin = {top: 30, right: 20, bottom: 30, left: 50},
+var emargin = {top: 5, right: 20, bottom: 20, left: 50},
     ewidth = 500 - emargin.left - emargin.right,
     eheight = 450 - emargin.top - emargin.bottom;
-
-// Parse the date / time
-//var parseDate = d3.time.format("%y").parse;
 
 // Set the ranges
 var ex = d3.time.scale().range([0, ewidth]);
@@ -28,8 +25,7 @@ var enrollmentchart = d3.select("#enrollment")
         .attr("width", ewidth + emargin.left + emargin.right)
         .attr("height", eheight + emargin.top + emargin.bottom)
     .append("g")
-        .attr("transform", 
-              "translate(" + 100 + "," + emargin.top + ")");
+        .attr("transform", "translate(" + emargin.left + "," + emargin.top + ")");
 
 
 // Get the data
@@ -85,10 +81,8 @@ d3.csv("data/enrollment.csv", function(error, data) {
                     // .attr("transform", "translate(" + emargin.left + "," + emargin.top + ")")
                     .attr("class", "overlay")
                     .attr("width", ewidth + emargin.left + emargin.right)
-                    .attr("height", eheight + emargin.top + emargin.bottom)
-                    .on("mouseover", function() { focus.style("display", null); })
-                    .on("mouseout", function() { focus.style("display", "none"); })
-                    .on("mousemove", mousemove1);
+                    .attr("height", eheight + emargin.top + emargin.bottom);
+
 
     function mousemove1() {
       var x0 = ex.invert(d3.mouse(this)[0]),
