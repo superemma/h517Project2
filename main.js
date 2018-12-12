@@ -1,15 +1,15 @@
 			//Width and height of map
-			var width = 960;
-			var height = 500;
+			var margin = {top: -5, right: -5, bottom: -5, left: -5},
+    width = 960 - margin.left - margin.right,
+    height = 500 - margin.top - margin.bottom;
+
 			// D3 Projection
 			var projection = d3.geo.albersUsa()
 							   .translate([width/2, height/2]) // translate to center of screen
 							   .scale([1000]);          
 							   // scale things down so see entire US
-			        
 			// Define path generator
-			var path = d3.geo.path()               
-			// path generator that will convert GeoJSON to SVG paths
+			var path = d3.geo.path()// path generator that will convert GeoJSON to SVG paths
 					  	 .projection(projection);  
 					  	 // tell path generator to use albersUsa projection
 					
@@ -30,9 +30,21 @@
 			//Create SVG element and append map to the SVG
 			var svg = d3.select("#usmap")
 						.append("svg")
-						.attr("width", width*2)
-						.attr("height", height);
-			
+					    .attr("width", width + margin.left + margin.right)
+					    .attr("height", height + margin.top + margin.bottom)
+
+				function dragstarted(d) {
+				  d3.event.sourceEvent.stopPropagation();
+				  d3.select(this).classed("dragging", true);
+				}
+
+				function dragged(d) {
+				  d3.select(this).attr("cx", d.x = d3.event.x).attr("cy", d.y = d3.event.y);
+				}
+
+				function dragended(d) {
+				  d3.select(this).classed("dragging", false);
+				}
 			var time_svg = d3.select("#timeline")
 						.append("svg")
 						.attr("width", width*2)
@@ -149,10 +161,8 @@
 							.style("fill", function(d) {
 								// Get data value
 								var value = d.properties.visited;
-								console.log(value);
 								if (value) {
 								//If value exists…
-									console.log(color(value));
 									return color(value);
 
 								} else {
