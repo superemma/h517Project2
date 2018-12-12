@@ -33,21 +33,9 @@
 					    .attr("width", width + margin.left + margin.right)
 					    .attr("height", height + margin.top + margin.bottom)
 
-				function dragstarted(d) {
-				  d3.event.sourceEvent.stopPropagation();
-				  d3.select(this).classed("dragging", true);
-				}
-
-				function dragged(d) {
-				  d3.select(this).attr("cx", d.x = d3.event.x).attr("cy", d.y = d3.event.y);
-				}
-
-				function dragended(d) {
-				  d3.select(this).classed("dragging", false);
-				}
 			var time_svg = d3.select("#timeline")
 						.append("svg")
-						.attr("width", width*2)
+						.attr("width", width)
 						.attr("height", 100);
 			// });
 			//label the time line:
@@ -107,7 +95,6 @@
 										.attr("font-size","20px")
 										.attr("fill","steelblue");
 
-
 			// Append Div for tooltip to SVG
 			var div = d3.select("body")
 					    .append("div")   
@@ -164,7 +151,6 @@
 								if (value) {
 								//If value exists…
 									return color(value);
-
 								} else {
 								//If value is undefined…
 									return "rgb(213,222,217)";
@@ -742,10 +728,10 @@ d3.csv("trialsbycondition2003-2017.csv", function(error, data){
     h = 400,                            //height
     r = 150,                            //radius
     aColor = [
-    'rgb(178, 55, 56)',
-    'rgb(213, 69, 70)',
-    'rgb(230, 125, 126)',
-    'rgb(239, 183, 182)'
+    '#f0f9e8',
+    '#bae4bc',
+    '#7bccc4',
+    '#2b8cbe'
 ];     //builtin range of colors
     var svgStudyType = d3.select("#type")
         .append("svg:svg").attr("width", w).attr("height", h).append("svg:g").attr("transform", "translate(" + r + "," + r + ")");
